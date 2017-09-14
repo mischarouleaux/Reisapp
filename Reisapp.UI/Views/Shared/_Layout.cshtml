@@ -1,9 +1,107 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
-    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - VerlofVerzoekVerwerker</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/plugins/animate.css" rel="stylesheet" />
+    <link type="text/css" href="~/scripts/lib/cupertino/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/Custom.css" rel="stylesheet" type="text/css" />
+    
+
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    
+    
+    
+    
+    
 </head>
-<body>
-	@RenderBody()
+<body>    
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" style="width:100px;">
+                        <span class="button-label">Menu</span>
+                        <div class="button-bars">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </div>
+                        
+                    </button>
+                
+                
+
+                    @Html.ActionLink("Reisapp", "Login", "Account", new { area = "" }, new { @class = "navbar-brand" })
+                
+                
+            </div>
+            <div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+
+                        
+                            <li class="nav-link">@Html.ActionLink("Home", "Login", "Account")</li>
+
+                    </ul>
+                </div>
+            </div>
+                
+                
+         </div>
+    </div>
+    <div class="header clearfix">
+        <ul class="nav nav-pills pull-right">
+                <li role="presentation"><a href="@Url.Action("SignOut","Account")"><i class="fa fa-unlock-alt"></i><span class="glyphicon glyphicon-off" style="margin-right:5px;"></span>Uitloggen</a></li>
+            
+        </ul>
+    </div>
+    <div class="container body-content">
+        <div style="margin-top:30px;">
+            @RenderBody()
+	    </div>
+        
+
+
+			
+        <div class="col-md-12 row" style="margin-top:20%;"></div>
+        
+        <footer class="modal-footer navbar-fixed-bottom" style="background-color:white;">
+            <div class="col-md-4" style="text-align:center;">
+                <p>&copy; @DateTime.Now.Year - Zuyd Hogeschool</p>
+            </div>
+
+            
+        </footer>
+    </div>
+
+    <script src="~/scripts/jquery-3.1.1.min.js"></script>    
+    <script src="~/scripts/bootstrap.min.js"></script>
+    <script src="~/scripts/moment.min.js"></script>
+    <script src="~/scripts/fullcalendar.min.js"></script>
+    <script src="~/scripts/jquery.validate.min.js"></script>
+    <script src="~/scripts/bootstrap-datepicker.min.js"></script>
+    <script src="~/scripts/locales/bootstrap-datepicker.nl.min.js"></script>
+    
+    
+    
+    
+
+
+    @RenderSection("scripts", required: false)
+
+   <script type="text/javascript">
+       $(document).ready(function () {
+           $(".dropdown-toggle").dropdown();
+       });    
+
+    </script>
+
 </body>
 </html>

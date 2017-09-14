@@ -1,1 +1,54 @@
-﻿<h2>Welcome to ASP.NET MVC @ViewData["Version"] on @ViewData["Runtime"]!</h2>
+﻿@model Reisapp.UI.ViewModels.Home;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12 row">
+    <div class="col-md-12">
+
+		
+        <div class="col-md-6">
+            <div class="col-md-12 headercontainer">
+                <h3><strong>Waar wil je heen</strong></h3>
+				<hr />
+
+				<div class="form-group">
+                    <div class="col-md-12">
+                        @*@Html.EditorFor(model => model.CityName)*@
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col-md-6">
+            <div class="col-md-12 headercontainer">
+                <h3><strong>Informatie steden</strong></h3>
+				<hr />
+			</div>
+		</div>
+
+		
+	</div>
+</div>
+
+@section scripts{
+
+
+    <script type="text/javascript">
+        
+    </script>
+
+}
+
+@*<div class="form-group">
+                            <label class="col-md-5 control-label" style="text-align:left;">Reden van het verlof *</label>
+
+                            <div class="col-md-7">
+                                @Html.EditorFor(model => model.Reason, new { htmlAttributes = new { @class = "form-control", @id = "OnlyText", @type = "text", placeholder = "Reden", @maxlength = "50", data_msg_required = "Vul de reden van uw verlofverzoek in.", data_rule_required = "true" } })
+
+                            </div>
+                        </div>
+                        *@
