@@ -2,7 +2,7 @@
 
 namespace Reisapp.UI.ViewModels.Home
 {
-    public class Index
+    public class IndexModel
     {
         public string CityName { get; set; }
     }
