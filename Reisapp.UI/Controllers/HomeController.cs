@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
+using Reisapp.Business.Services;
 
 namespace Reisapp.UI.Controllers
 {
@@ -17,7 +18,27 @@ namespace Reisapp.UI.Controllers
             ViewData["Version"] = mvcName.Version.Major + "." + mvcName.Version.Minor;
             ViewData["Runtime"] = isMono ? "Mono" : ".NET";
 
+            RouteService.FindRoute(1, 7, false, true, true);
+
             return View();
         }
-    }
+
+        [HttpPost]
+        public ActionResult GetRoute(int cityidFrom, int cityidTo, bool bus, bool train, bool airplane)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult RouteTowards(int cityid)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult RouteFrom(int cityid)
+        {
+            return View();
+        }
+     }
 }

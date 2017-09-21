@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Reisapp.UI</RootNamespace>
     <AssemblyName>Reisapp.UI</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -90,9 +90,6 @@
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="Content\Custom.css" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1-vsdoc.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -103,14 +100,30 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Scripts\jquery-3.2.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.slim.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1-vsdoc.js" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Content\bootstrap.min.css.map" />
     <None Include="Content\bootstrap.css.map" />
     <None Include="Content\bootstrap-theme.min.css.map" />
     <None Include="Content\bootstrap-theme.css.map" />
+    <None Include="Scripts\jquery-3.2.1.slim.min.map" />
+    <None Include="Scripts\jquery-3.2.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Reisapp.Models\Reisapp.Models.csproj">
+      <Project>{FD765808-26C6-4C67-8E69-ACD1B37F4F65}</Project>
+      <Name>Reisapp.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reisapp.Business\Reisapp.Business.csproj">
+      <Project>{C16971A7-6286-4415-857E-023D6894AC79}</Project>
+      <Name>Reisapp.Business</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

@@ -31,9 +31,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\RouteService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Reisapp.Models\Reisapp.Models.csproj">
+      <Project>{FD765808-26C6-4C67-8E69-ACD1B37F4F65}</Project>
+      <Name>Reisapp.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
