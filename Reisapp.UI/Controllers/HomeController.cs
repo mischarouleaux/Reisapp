@@ -12,14 +12,6 @@ namespace Reisapp.UI.Controllers
     {
         public ActionResult Index()
         {
-            var mvcName = typeof(Controller).Assembly.GetName();
-            var isMono = Type.GetType("Mono.Runtime") != null;
-
-            ViewData["Version"] = mvcName.Version.Major + "." + mvcName.Version.Minor;
-            ViewData["Runtime"] = isMono ? "Mono" : ".NET";
-
-            RouteService.FindRoute(1, 7, false, true, true);
-
             return View();
         }
 
@@ -30,13 +22,13 @@ namespace Reisapp.UI.Controllers
         }
 
         [HttpPost]
-        public ActionResult RouteTowards(int cityid)
+        public ActionResult RouteTowards(string cityname)
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult RouteFrom(int cityid)
+        public ActionResult RouteFrom(string cityname)
         {
             return View();
         }

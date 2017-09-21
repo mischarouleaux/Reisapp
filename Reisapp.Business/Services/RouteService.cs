@@ -51,12 +51,10 @@ namespace Reisapp.Business.Services
             int startPoint = startpoint;
             int endPoint = endpoint;
 
-			bool shortestRouteFound = false;
+			//bool shortestRouteFound = false;
 			int totalDuration = 0;
 
             var result = Induction(cities, listBeen, shortestRoad, startPoint, endPoint, cities.Find(x => x.id == startPoint), totalDuration, connections, null);
-
-            Console.WriteLine(result);
 
 
         }
@@ -126,9 +124,6 @@ namespace Reisapp.Business.Services
                     currentconnection = connection;
 					totalDuration = duration;
 					totalDuration = totalDuration + currentModel.connections.Find(x => x.towardsID == connection.towardsID).duration;
-					Console.WriteLine("CurrentID: " + currentModel.id);
-					Console.WriteLine("TowardsID: " + connection.towardsID);
-					Console.WriteLine("Duration: " + totalDuration);
 
                     previousIDList = addPreviousID(previousIDList, currentconnection);
 
