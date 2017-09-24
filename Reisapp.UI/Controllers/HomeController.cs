@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
@@ -16,9 +18,9 @@ namespace Reisapp.UI.Controllers
         }
 
         [HttpPost]
-        public ActionResult GetRoute(int cityidFrom, int cityidTo, bool bus, bool train, bool airplane)
+        public ActionResult GetRoute(string FromCityName)//, string ToCityName, bool bus, bool train, bool airplane)
         {
-            return View();
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpPost]

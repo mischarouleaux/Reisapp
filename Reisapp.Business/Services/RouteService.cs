@@ -36,7 +36,7 @@ namespace Reisapp.Business.Services
             return cities;
         }
 
-        public static void FindRoute(int startpoint, int endpoint, bool isbus, bool istrain, bool isairplane)
+        public static ShortestRoadModel FindRoute(int startpoint, int endpoint, bool isbus, bool istrain, bool isairplane)
         {
 			//Initialize
 			bool IsBus = isbus;
@@ -56,6 +56,7 @@ namespace Reisapp.Business.Services
 
             var result = Induction(cities, listBeen, shortestRoad, startPoint, endPoint, cities.Find(x => x.id == startPoint), totalDuration, connections, null);
 
+            return result;
 
         }
 

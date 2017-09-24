@@ -5,9 +5,40 @@ using Reisapp.Models.Services;
 
 namespace Reisapp.Business.Services
 {
-    public class CityService
+    public static class CityService
     {
-        public CityModel GetTowardsCity(string cityname, bool bus, bool train, bool airplane)
+        public static int GetIdByName(string cityname)
+        {
+            List<CityModel> cities = new List<CityModel>();
+            cities = CreateList.createList(cities);
+
+            CityModel city = cities.Find(x => x.name == cityname);
+            
+            if (city == null)
+            {
+                return 0;
+            }
+
+            return city.id;
+        }
+
+        public static string GetNameByID(int id)
+        {
+            List<CityModel> cities = new List<CityModel>();
+            cities = CreateList.createList(cities);
+
+            CityModel city = cities.Find(x => x.id == id);
+
+            if (city == null)
+            {
+                return "";
+            }
+
+            return city.name;
+        }
+
+
+        public static CityModel GetTowardsCity(string cityname, bool bus, bool train, bool airplane)
         {
 			List<CityModel> cities = new List<CityModel>();
 			cities = CreateList.createList(cities);
@@ -28,11 +59,17 @@ namespace Reisapp.Business.Services
 				}
 			}
 
+            foreach (var item in removeCities)
+            {
+                city.connections.Remove(item);
+            }
+
+
             return city;
 
         }
 
-        public CityModel GetFromCity(string cityname, bool bus, bool train, bool airplane)
+        public static CityModel GetFromCity(string cityname, bool bus, bool train, bool airplane)
         {
             List<CityModel> cities = new List<CityModel>();
             cities = CreateList.createList(cities);
@@ -51,7 +88,16 @@ namespace Reisapp.Business.Services
 				{
 					removeCities.Add(item);
 				}
-			}
+
+                
+            }
+            
+
+            foreach(var item in removeCities)
+            {
+                city.connections.Remove(item);
+            }
+
 
             return city;
         }
